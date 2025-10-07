@@ -1,0 +1,32 @@
+/* Page-specific overrides to force correct fonts where the main stylesheet may be inconsistent */
+/* Use !important sparingly here to ensure overrides for this template only */
+.rooms-page,
+.rooms-page p,
+.rooms-page li,
+.rooms-page a,
+.rooms-page .con,
+.rooms-page .section-subtitle {
+  font-family: 'Barlow', Arial, sans-serif !important;
+}
+
+.rooms-page .section-title,
+.rooms-page .section-title span,
+.rooms-page h1,
+.rooms-page h2,
+.rooms-page h3,
+.rooms-page h4,
+.rooms-page h5,
+.rooms-page h6 {
+  font-family: 'Gilda Display', Georgia, 'Times New Roman', serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* If Google Fonts can't load, slightly adjust size/line-height to keep appearance */
+.rooms-page .section-title {
+  font-weight: 400 !important;
+  line-height: 1.15 !important;
+}
+
+/* make sure star marks align */
+.rooms-page .star-rating { margin-bottom: 0.8em !important; }
