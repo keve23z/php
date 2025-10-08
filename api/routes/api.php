@@ -2,9 +2,11 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PhongController;
-use App\Http\Controllers\TienNghiController;
-use App\Http\Controllers\LoaiPhongController;
+// controllers are inside App\Http\Controllers\Main
+use App\Http\Controllers\Main\PhongController;
+use App\Http\Controllers\Main\TienNghiController;
+use App\Http\Controllers\Main\LoaiPhongController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,7 +23,6 @@ Route::get('phongs/loai/{maLoai}', [PhongController::class, 'searchByLoai']);
 Route::get('phongs/{id}/details', [PhongController::class, 'details']);
 // return the first room for a given LoaiPhong (with its amenities)
 Route::apiResource('phongs', PhongController::class);
-Route::apiResource('tiennghis', TienNghiController::class);
 Route::apiResource('loaiphongs', LoaiPhongController::class);
 // quick health-check route for debugging
 Route::get('ping', function () {

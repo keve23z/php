@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Main;
 
+use App\Http\Controllers\Controller;
 use App\Models\LoaiPhong;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -87,19 +88,9 @@ class LoaiPhongController extends Controller
      * @param  \App\Models\LoaiPhong  $loaiPhong
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, LoaiPhong $loaiPhong)
+    public function update()
     {
-        $validated = $request->validate([
-            'TenLoaiPhong' => 'sometimes|required|string|max:100',
-            'MoTa' => 'nullable|string',
-            'SoNguoiToiDa' => 'nullable|integer',
-            'GiaCoBanMotDem' => 'nullable|numeric',
-            'UrlAnhLoaiPhong' => 'nullable|string|max:255',
-            'UuTienChinh' => 'nullable|boolean',
-        ]);
-
-        $loaiPhong->update($validated);
-        return response()->json($loaiPhong);
+       
     }
 
     /**
@@ -108,10 +99,9 @@ class LoaiPhongController extends Controller
      * @param  \App\Models\LoaiPhong  $loaiPhong
      * @return \Illuminate\Http\Response
      */
-    public function destroy(LoaiPhong $loaiPhong)
+    public function destroy()
     {
-        $loaiPhong->delete();
-        return response()->json(['message' => 'Đã xoá loại phòng']);
+       
     }
 
     /**

@@ -14,7 +14,7 @@ class Phong extends Model
     protected $keyType = 'string';
 
     protected $fillable = [
-        'IDLoaiPhong', 'SoPhong', 'MoTa', 'UuTienChinh', 'XepHangSao', 'TrangThai', 'UrlAnhPhong'
+        'IDLoaiPhong', 'SoPhong', 'TenPhong', 'MoTa', 'UuTienChinh', 'XepHangSao', 'TrangThai', 'UrlAnhPhong'
     ];
 
     public function tienNghis()

@@ -14,16 +14,15 @@
         content="THE CAPPA is a modern, elegant HTML template for luxury hotels, resorts, and vacation rentals. Fully responsive, customizable, and perfect for hospitality websites.">
     <meta name="author" content="THE CAPPA Luxury Hotel Template by DuruThemes">
     <meta name="robots" content="index, follow">
-    <link rel="icon" href="img/favicon.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="HomePage/img/favicon.png" type="image/png" sizes="32x32">
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400&amp;family=Barlow:wght@400&amp;family=Gilda+Display&amp;display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/css/plugins.css" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="HomePage/css/plugins.css" />
+    <link rel="stylesheet" href="HomePage/css/style.css" />
     <style>
-        /* sá»­a chiá»u cao: giá»¯ top cards cao hÆ¡n, bottom cards nhá» láº¡i */
         .rooms1 .position-re.small {
             height: 420px;
         }   /* top row (index 0-2) */
@@ -37,7 +36,7 @@
             object-fit: cover;
         }
 
-        /* responsive: giáº£m chiá»u cao trÃªn mÃ n nhá» */
+        
         @media (max-width: 991px) {
 
             .rooms1 .position-re.small,
@@ -142,7 +141,7 @@
             <div class="row align-items-center">
                 <!-- Logo -->
                 <div class="col-6 col-md-6 cappa-logo-wrap">
-                    <a href="index.html" class="cappa-logo"><img src="img/logo.png" alt=""></a>
+                    <a href="index.html" class="cappa-logo"><img src="HomePage/img/logo.png" alt=""></a>
                 </div>
                 <!-- Menu Burger -->
                 <div class="col-6 col-md-6 text-right cappa-wrap-burger-wrap"> <a href="#"
@@ -154,7 +153,7 @@
     <header class="header slider-fade">
         <div class="owl-carousel owl-theme">
             <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
-            <div class="text-center item bg-img" data-overlay-dark="2" data-background="img/slider/2.jpg">
+            <div class="text-center item bg-img" data-overlay-dark="2" data-background="HomePage/img/slider/2.jpg">
                 <div class="v-middle caption">
                     <div class="container">
                         <div class="row">
@@ -175,7 +174,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center item bg-img" data-overlay-dark="2" data-background="img/slider/3.jpg">
+            <div class="text-center item bg-img" data-overlay-dark="2" data-background="HomePage/img/slider/3.jpg">
                 <div class="v-middle caption">
                     <div class="container">
                         <div class="row">
@@ -196,7 +195,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center item bg-img" data-overlay-dark="3" data-background="img/slider/1.jpg">
+            <div class="text-center item bg-img" data-overlay-dark="3" data-background="HomePage/img/slider/1.jpg">
                 <div class="v-middle caption">
                     <div class="container">
                         <div class="row">
@@ -244,10 +243,10 @@
                     </div>
                 </div>
                 <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
-                    <img src="img/rooms/8.jpg" alt="" class="mt-90 mb-30">
+                    <img src="HomePage/img/rooms/8.jpg" alt="" class="mt-90 mb-30">
                 </div>
                 <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
-                    <img src="img/rooms/2.jpg" alt="">
+                    <img src="HomePage/img/rooms/2.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -271,7 +270,7 @@
                         $name = isset($room['TenLoaiPhong']) ? $room['TenLoaiPhong'] : '';
                         $idLoai = isset($room['IDLoaiPhong']) ? $room['IDLoaiPhong'] : '';
                         $displayPrice = $price !== '' ? number_format((float) $price, 0, '.', ',') .  '₫' : '';
-                        $imgUrl = '/img/rooms/' . rawurlencode($img); // root-relative
+                        $imgUrl = '/HomePage/img/rooms/' . rawurlencode($img); // root-relative
                         ?>
                         <div class="<?php echo $colClass; ?>">
                             <div class="item">
@@ -340,7 +339,7 @@
                 <div class="col-md-8">
                     <div class="owl-carousel owl-theme">
                         <div class="pricing-card">
-                            <img src="img/pricing/1.jpg" alt="">
+                            <img src="HomePage/img/pricing/1.jpg" alt="">
                             <div class="desc">
                                 <div class="name">Room cleaning</div>
                                 <div class="amount">$50<span>/ month</span></div>
@@ -352,7 +351,7 @@
                             </div>
                         </div>
                         <div class="pricing-card">
-                            <img src="img/pricing/2.jpg" alt="">
+                            <img src="HomePage/img/pricing/2.jpg" alt="">
                             <div class="desc">
                                 <div class="name">Drinks included</div>
                                 <div class="amount">$30<span>/ daily</span></div>
@@ -364,7 +363,7 @@
                             </div>
                         </div>
                         <div class="pricing-card">
-                            <img src="img/pricing/3.jpg" alt="">
+                            <img src="HomePage/img/pricing/3.jpg" alt="">
                             <div class="desc">
                                 <div class="name">Room Breakfast</div>
                                 <div class="amount">$30<span>/ daily</span></div>
@@ -376,7 +375,7 @@
                             </div>
                         </div>
                         <div class="pricing-card">
-                            <img src="img/pricing/4.jpg" alt="">
+                            <img src="HomePage/img/pricing/4.jpg" alt="">
                             <div class="desc">
                                 <div class="name">Safe & Secure</div>
                                 <div class="amount">$15<span>/ daily</span></div>
@@ -394,7 +393,7 @@
     </section>
     <!-- Promo Video -->
     <section class="video-wrapper video section-padding bg-img bg-fixed" data-overlay-dark="3"
-        data-background="img/slider/2.jpg">
+        data-background="HomePage/img/slider/2.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2 text-center">
@@ -551,7 +550,7 @@
     </section>
     <!-- Testiominals -->
     <section class="testimonials">
-        <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/slider/2.jpg"
+        <div class="background bg-img bg-fixed section-padding pb-0" data-background="HomePage/img/slider/2.jpg"
             data-overlay-dark="3">
             <div class="container">
                 <div class="row">
@@ -564,13 +563,13 @@
                             </div>
                             <div class="owl-carousel owl-theme">
                                 <div class="item">
-                                    <span class="quote"><img src="img/quot.png" alt=""></span>
+                                    <span class="quote"><img src="HomePage/img/quot.png" alt=""></span>
                                     <p>Hotel dapibus asue metus the nec feusiate eraten miss hendreri net ve ante the
                                         lemon sanleo nectan feugiat erat hendrerit necuis ve ante otel inilla duiman at
                                         finibus viverra neca the sene on satien the miss drana inc fermen norttito sit
                                         space, mus nellentesque habitan.</p>
                                     <div class="info">
-                                        <div class="author-img"> <img src="img/team/4.jpg" alt=""> </div>
+                                        <div class="author-img"> <img src="HomePage/img/team/4.jpg" alt=""> </div>
                                         <div class="cont"> <span><i class="star-rating"></i><i
                                                     class="star-rating"></i><i class="star-rating"></i><i
                                                     class="star-rating"></i><i class="star-rating"></i></span>
@@ -579,13 +578,13 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <span class="quote"><img src="img/quot.png" alt=""></span>
+                                    <span class="quote"><img src="HomePage/img/quot.png" alt=""></span>
                                     <p>Hotel dapibus asue metus the nec feusiate eraten miss hendreri net ve ante the
                                         lemon sanleo nectan feugiat erat hendrerit necuis ve ante otel inilla duiman at
                                         finibus viverra neca the sene on satien the miss drana inc fermen norttito sit
                                         space, mus nellentesque habitan.</p>
                                     <div class="info">
-                                        <div class="author-img"> <img src="img/team/1.jpg" alt=""> </div>
+                                        <div class="author-img"> <img src="HomePage/img/team/1.jpg" alt=""> </div>
                                         <div class="cont"> <span><i class="star-rating"></i><i
                                                     class="star-rating"></i><i class="star-rating"></i><i
                                                     class="star-rating"></i><i class="star-rating"></i></span>
@@ -594,13 +593,13 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <span class="quote"><img src="img/quot.png" alt=""></span>
+                                    <span class="quote"><img src="HomePage/img/quot.png" alt=""></span>
                                     <p>Hotel dapibus asue metus the nec feusiate eraten miss hendreri net ve ante the
                                         lemon sanleo nectan feugiat erat hendrerit necuis ve ante otel inilla duiman at
                                         finibus viverra neca the sene on satien the miss drana inc fermen norttito sit
                                         space, mus nellentesque habitan.</p>
                                     <div class="info">
-                                        <div class="author-img"> <img src="img/team/5.jpg" alt=""> </div>
+                                        <div class="author-img"> <img src="HomePage/img/team/5.jpg" alt=""> </div>
                                         <div class="cont"> <span><i class="star-rating"></i><i
                                                     class="star-rating"></i><i class="star-rating"></i><i
                                                     class="star-rating"></i><i class="star-rating"></i></span>
@@ -621,7 +620,7 @@
             <div class="row">
                 <div class="col-md-6 p-0 animate-box" data-animate-effect="fadeInLeft">
                     <div class="img left">
-                        <a href="restaurant.html"><img src="img/restaurant/1.jpg" alt=""></a>
+                        <a href="restaurant.html"><img src="HomePage/img/restaurant/1.jpg" alt=""></a>
                     </div>
                 </div>
                 <div class="col-md-6 p-0 bg-cream valign animate-box" data-animate-effect="fadeInRight">
@@ -656,14 +655,14 @@
                 </div>
                 <div class="col-md-6 p-0 order1 animate-box" data-animate-effect="fadeInRight">
                     <div class="img">
-                        <a href="spa-wellness.html"><img src="img/spa/3.jpg" alt=""></a>
+                        <a href="spa-wellness.html"><img src="HomePage/img/spa/3.jpg" alt=""></a>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 p-0 animate-box" data-animate-effect="fadeInLeft">
                     <div class="img left">
-                        <a href="spa-wellness.html"><img src="img/spa/2.jpg" alt=""></a>
+                        <a href="spa-wellness.html"><img src="HomePage/img/spa/2.jpg" alt=""></a>
                     </div>
                 </div>
                 <div class="col-md-6 p-0 bg-cream valign animate-box" data-animate-effect="fadeInRight">
@@ -698,7 +697,7 @@
                 </div>
                 <div class="col-md-6 p-0 order1 animate-box" data-animate-effect="fadeInRight">
                     <div class="img">
-                        <a href="spa-wellness.html"><img src="img/spa/1.jpg" alt=""></a>
+                        <a href="spa-wellness.html"><img src="HomePage/img/spa/1.jpg" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -717,7 +716,7 @@
                 <div class="col-md-12">
                     <div class="owl-carousel owl-theme">
                         <div class="item">
-                            <div class="position-re o-hidden"> <img src="img/rooms/8.jpg" alt="">
+                            <div class="position-re o-hidden"> <img src="HomePage/img/rooms/8.jpg" alt="">
                                 <div class="date">
                                     <a href="post.html"> <span>Dec</span> <i>02</i> </a>
                                 </div>
@@ -729,7 +728,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <div class="position-re o-hidden"> <img src="img/news/2.jpg" alt="">
+                            <div class="position-re o-hidden"> <img src="HomePage/img/news/2.jpg" alt="">
                                 <div class="date">
                                     <a href="post.html"> <span>Dec</span> <i>04</i> </a>
                                 </div>
@@ -741,7 +740,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <div class="position-re o-hidden"> <img src="img/news/3.jpg" alt="">
+                            <div class="position-re o-hidden"> <img src="HomePage/img/news/3.jpg" alt="">
                                 <div class="date">
                                     <a href="post.html"> <span>Dec</span> <i>06</i> </a>
                                 </div>
@@ -753,7 +752,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <div class="position-re o-hidden"> <img src="img/news/4.jpg" alt="">
+                            <div class="position-re o-hidden"> <img src="HomePage/img/news/4.jpg" alt="">
                                 <div class="date">
                                     <a href="post.html"> <span>Dec</span> <i>08</i> </a>
                                 </div>
@@ -767,7 +766,7 @@
                         </div>
 
                         <div class="item">
-                            <div class="position-re o-hidden"> <img src="img/news/6.jpg" alt="">
+                            <div class="position-re o-hidden"> <img src="HomePage/img/news/6.jpg" alt="">
                                 <div class="date">
                                     <a href="post.html"> <span>Dec</span> <i>08</i> </a>
                                 </div>
@@ -779,7 +778,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <div class="position-re o-hidden"> <img src="img/news/5.jpg" alt="">
+                            <div class="position-re o-hidden"> <img src="HomePage/img/news/5.jpg" alt="">
                                 <div class="date">
                                     <a href="post.html"> <span>Dec</span> <i>08</i> </a>
                                 </div>
@@ -799,7 +798,7 @@
     </section>
     <!-- Reservation & Booking Form -->
     <section class="testimonials">
-        <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/slider/2.jpg"
+        <div class="background bg-img bg-fixed section-padding pb-0" data-background="HomePage/img/slider/2.jpg"
             data-overlay-dark="2">
             <div class="container">
                 <div class="row">
@@ -895,22 +894,22 @@
                 <div class="col-md-7">
                     <div class="owl-carousel owl-theme">
                         <div class="clients-logo">
-                            <a href="#0"><img src="img/clients/1.png" alt=""></a>
+                            <a href="#0"><img src="HomePage/img/clients/1.png" alt=""></a>
                         </div>
                         <div class="clients-logo">
-                            <a href="#0"><img src="img/clients/2.png" alt=""></a>
+                            <a href="#0"><img src="HomePage/img/clients/2.png" alt=""></a>
                         </div>
                         <div class="clients-logo">
-                            <a href="#0"><img src="img/clients/3.png" alt=""></a>
+                            <a href="#0"><img src="HomePage/img/clients/3.png" alt=""></a>
                         </div>
                         <div class="clients-logo">
-                            <a href="#0"><img src="img/clients/4.png" alt=""></a>
+                            <a href="#0"><img src="HomePage/img/clients/4.png" alt=""></a>
                         </div>
                         <div class="clients-logo">
-                            <a href="#0"><img src="img/clients/5.png" alt=""></a>
+                            <a href="#0"><img src="HomePage/img/clients/5.png" alt=""></a>
                         </div>
                         <div class="clients-logo">
-                            <a href="#0"><img src="img/clients/6.png" alt=""></a>
+                            <a href="#0"><img src="HomePage/img/clients/6.png" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -927,13 +926,6 @@
                             <h3 class="footer-title">About Hotel</h3>
                             <p class="footer-about-text">Welcome to the best five-star deluxe hotel in New York. Hotel
                                 elementum sesue the aucan vestibulum aliquam justo in sapien rutrum volutpat.</p>
-
-                            <div class="footer-language"> <i class="lni ti-world"></i>
-                                <select onchange="location = this.value;">
-                                    <option value="#0">English</option>
-                                    <option value="#0">German</option>
-                                </select>
-                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 offset-md-1">
@@ -983,24 +975,24 @@
         </div>
     </footer>
     <!-- jQuery -->
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/jquery-migrate-3.5.0.min.js"></script>
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/jquery.isotope.v3.0.2.js"></script>
-    <script src="js/pace.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scrollIt.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/jquery.magnific-popup.js"></script>
-    <script src="js/YouTubePopUp.js"></script>
-    <script src="js/select2.js"></script>
-    <script src="js/datepicker.js"></script>
-    <script src="js/smooth-scroll.min.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="HomePage/js/jquery-3.7.1.min.js"></script>
+    <script src="HomePage/js/jquery-migrate-3.5.0.min.js"></script>
+    <script src="HomePage/js/modernizr-2.6.2.min.js"></script>
+    <script src="HomePage/js/imagesloaded.pkgd.min.js"></script>
+    <script src="HomePage/js/jquery.isotope.v3.0.2.js"></script>
+    <script src="HomePage/js/pace.js"></script>
+    <script src="HomePage/js/popper.min.js"></script>
+    <script src="HomePage/js/bootstrap.min.js"></script>
+    <script src="HomePage/js/scrollIt.min.js"></script>
+    <script src="HomePage/js/jquery.waypoints.min.js"></script>
+    <script src="HomePage/js/owl.carousel.min.js"></script>
+    <script src="HomePage/js/jquery.stellar.min.js"></script>
+    <script src="HomePage/js/jquery.magnific-popup.js"></script>
+    <script src="HomePage/js/YouTubePopUp.js"></script>
+    <script src="HomePage/js/select2.js"></script>
+    <script src="HomePage/js/datepicker.js"></script>
+    <script src="HomePage/js/smooth-scroll.min.js"></script>
+    <script src="HomePage/js/custom.js"></script>
 </body>
 
 <!-- Mirrored from duruthemes.com/demo/html/cappa/demo6-light/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 18 Sep 2025 01:56:06 GMT -->
