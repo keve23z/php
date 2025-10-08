@@ -30,19 +30,21 @@ if (!function_exists('safe_text')) {
     <!-- Google Fonts used by custom.css -->
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400&amp;family=Barlow:wght@400&amp;family=Gilda+Display&amp;display=swap" rel="stylesheet">
+    <!-- Use Playfair Display for headings (fallbacks included) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Barlow:wght@400&display=swap" rel="stylesheet">
 
     <!-- core styles (use root-relative paths to public/) -->
-    <link rel="stylesheet" href="/css/plugins.css" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/custom.css" />
+    <link rel="stylesheet" href="/HomePage/css/plugins.css" />
+    <link rel="stylesheet" href="/HomePage/css/style.css" />
+    <link rel="stylesheet" href="/HomePage/css/custom.css" />
 
     <style>
       /* ensure section-title uses fonts from custom.css */
       section.rooms-page .section-title {
-        font-family: "Gilda Display", "Barlow", serif !important;
+        font-family: "Playfair Display", "Gilda Display", "Barlow", serif !important;
         font-weight: 400 !important;
         line-height: 1.15 !important;
+        letter-spacing: 0.02em;
       }
       /* nhỏ gọn: đảm bảo overlay/tiện ích hiển thị */
       .room-wrap{padding:60px 30px}
@@ -108,7 +110,7 @@ if (!function_exists('safe_text')) {
             <div class="row align-items-center">
                 <!-- Logo -->
                 <div class="col-6 col-md-6 cappa-logo-wrap">
-                    <a href="index.html" class="cappa-logo"><img src="img/logo.png" alt=""></a>
+                    <a href="index.html" class="cappa-logo"><img src="HomePage/img/logo.png" alt=""></a>
                 </div>
                 <!-- Menu Burger -->
                 <div class="col-6 col-md-6 text-right cappa-wrap-burger-wrap"> <a href="#" class="cappa-nav-toggle cappa-js-cappa-nav-toggle"><i></i></a> </div>
@@ -119,9 +121,9 @@ if (!function_exists('safe_text')) {
     <header class="header slider">
         <div class="owl-carousel owl-theme">
             <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
-            <div class="text-center item bg-img" data-overlay-dark="3" data-background="img/slider/3.jpg"></div>
-            <div class="text-center item bg-img" data-overlay-dark="3" data-background="img/slider/2.jpg"></div>
-            <div class="text-center item bg-img" data-overlay-dark="3" data-background="img/slider/5.jpg"></div>
+            <div class="text-center item bg-img" data-overlay-dark="3" data-background="HomePage/img/slider/3.jpg"></div>
+            <div class="text-center item bg-img" data-overlay-dark="3" data-background="HomePage/img/slider/2.jpg"></div>
+            <div class="text-center item bg-img" data-overlay-dark="3" data-background="HomePage/img/slider/5.jpg"></div>
         </div>
         <!-- arrow down -->
         <div class="arrow bounce text-center">
@@ -143,8 +145,8 @@ if (!function_exists('safe_text')) {
                             }
                         ?>
                     </span>
-                    <div class="section-subtitle"><?php echo safe_text($room['IDPhong'] ?? ''); ?></div>
-                    <div class="section-title"><?php echo safe_text($room['MoTa'] ?? 'Room Details'); ?></div>
+                    <div class="section-subtitle"><?php echo safe_text($room['SoPhong'] ?? ''); ?></div>
+                    <div class="section-title"><?php echo safe_text($room['TenPhong'] ?? 'Room Details'); ?></div>
                 </div>
                 <div class="col-md-8">
                     <p class="mb-30"><?php echo safe_text($room['MoTa'] ?? 'Hotel non lorem ac erat suscipit bibendum nulla facilisi.'); ?></p>
@@ -265,14 +267,14 @@ if (!function_exists('safe_text')) {
                                 <?php
                                     $img = isset($room['UrlAnhLoaiPhong']) ? $room['UrlAnhLoaiPhong'] : '1.jpg';
                                     // prefer rooms/, then slider/, fallback to rooms/1.jpg
-                                    $pathRooms = public_path('img/rooms/' . $img);
-                                    $pathSlider = public_path('img/slider/' . $img);
+                                    $pathRooms = public_path('HomePage/img/rooms/' . $img);
+                                    $pathSlider = public_path('HomePage/img/slider/' . $img);
                                     if (file_exists($pathRooms)) {
-                                        $imgUrl = '/img/rooms/' . rawurlencode($img);
+                                        $imgUrl = '/HomePage/img/rooms/' . rawurlencode($img);
                                     } elseif (file_exists($pathSlider)) {
-                                        $imgUrl = '/img/slider/' . rawurlencode($img);
+                                        $imgUrl = '/HomePage/img/slider/' . rawurlencode($img);
                                     } else {
-                                        $imgUrl = '/img/rooms/1.jpg';
+                                        $imgUrl = '/HomePage/img/rooms/1.jpg';
                                     }
 
                                     $idLoai = $room['IDLoaiPhong'] ?? '';
@@ -313,7 +315,7 @@ if (!function_exists('safe_text')) {
                         <?php else: ?>
                             <!-- fallback: static items if API empty -->
                             <div class="item">
-                                <div class="position-re o-hidden"> <img src="/img/rooms/1.jpg" alt=""> </div>
+                                <div class="position-re o-hidden"> <img src="/HomePage/img/rooms/1.jpg" alt=""> </div>
                                 <span class="category"><a href="/rooms2">Book</a></span>
                                 <div class="con">
                                     <h6><a href="/roomdetails.php">150$ / Night</a></h6>
@@ -359,7 +361,7 @@ if (!function_exists('safe_text')) {
                 <div class="col-md-8">
                     <div class="owl-carousel owl-theme">
                         <div class="pricing-card">
-                            <img src="img/pricing/1.jpg" alt="">
+                            <img src="HomePage/img/pricing/1.jpg" alt="">
                             <div class="desc">
                                 <div class="name">Room cleaning</div>
                                 <div class="amount">$50<span>/ month</span></div>
@@ -371,7 +373,7 @@ if (!function_exists('safe_text')) {
                             </div>
                         </div>
                         <div class="pricing-card">
-                            <img src="img/pricing/2.jpg" alt="">
+                            <img src="HomePage/img/pricing/2.jpg" alt="">
                             <div class="desc">
                                 <div class="name">Drinks included</div>
                                 <div class="amount">$30<span>/ daily</span></div>
@@ -383,7 +385,7 @@ if (!function_exists('safe_text')) {
                             </div>
                         </div>
                         <div class="pricing-card">
-                            <img src="img/pricing/3.jpg" alt="">
+                            <img src="HomePage/img/pricing/3.jpg" alt="">
                             <div class="desc">
                                 <div class="name">Room Breakfast</div>
                                 <div class="amount">$30<span>/ daily</span></div>
@@ -395,7 +397,7 @@ if (!function_exists('safe_text')) {
                             </div>
                         </div>
                         <div class="pricing-card">
-                            <img src="img/pricing/4.jpg" alt="">
+                            <img src="HomePage/img/pricing/4.jpg" alt="">
                             <div class="desc">
                                 <div class="name">Safe & Secure</div>
                                 <div class="amount">$15<span>/ daily</span></div>
@@ -413,7 +415,7 @@ if (!function_exists('safe_text')) {
     </section>
     <!-- Reservation & Booking Form -->
     <section class="testimonials">
-        <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/slider/2.jpg" data-overlay-dark="2">
+        <div class="background bg-img bg-fixed section-padding pb-0" data-background="HomePage/img/slider/2.jpg" data-overlay-dark="2">
             <div class="container">
                 <div class="row">
                     <!-- Reservation -->
@@ -501,22 +503,22 @@ if (!function_exists('safe_text')) {
                 <div class="col-md-7">
                 <div class="owl-carousel owl-theme">
                     <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/1.png" alt=""></a>
+                        <a href="#0"><img src="HomePage/img/clients/1.png" alt=""></a>
                     </div>
                     <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/2.png" alt=""></a>
+                        <a href="#0"><img src="HomePage/img/clients/2.png" alt=""></a>
                     </div>
                     <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/3.png" alt=""></a>
+                        <a href="#0"><img src="HomePage/img/clients/3.png" alt=""></a>
                     </div>
                     <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/4.png" alt=""></a>
+                        <a href="#0"><img src="HomePage/img/clients/4.png" alt=""></a>
                     </div>
                     <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/5.png" alt=""></a>
+                        <a href="#0"><img src="HomePage/img/clients/5.png" alt=""></a>
                     </div>
                     <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/6.png" alt=""></a>
+                        <a href="#0"><img src="HomePage/img/clients/6.png" alt=""></a>
                     </div>
                 </div>
                 </div>
@@ -587,24 +589,24 @@ if (!function_exists('safe_text')) {
             </div>
     </footer>
     <!-- jQuery -->
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/jquery-migrate-3.5.0.min.js"></script>
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/jquery.isotope.v3.0.2.js"></script>
-    <script src="js/pace.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scrollIt.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/jquery.magnific-popup.js"></script>
-    <script src="js/YouTubePopUp.js"></script>
-    <script src="js/select2.js"></script>
-    <script src="js/datepicker.js"></script>
-    <script src="js/smooth-scroll.min.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="HomePage/js/jquery-3.7.1.min.js"></script>
+    <script src="HomePage/js/jquery-migrate-3.5.0.min.js"></script>
+    <script src="HomePage/js/modernizr-2.6.2.min.js"></script>
+    <script src="HomePage/js/imagesloaded.pkgd.min.js"></script>
+    <script src="HomePage/js/jquery.isotope.v3.0.2.js"></script>
+    <script src="HomePage/js/pace.js"></script>
+    <script src="HomePage/js/popper.min.js"></script>
+    <script src="HomePage/js/bootstrap.min.js"></script>
+    <script src="HomePage/js/scrollIt.min.js"></script>
+    <script src="HomePage/js/jquery.waypoints.min.js"></script>
+    <script src="HomePage/js/owl.carousel.min.js"></script>
+    <script src="HomePage/js/jquery.stellar.min.js"></script>
+    <script src="HomePage/js/jquery.magnific-popup.js"></script>
+    <script src="HomePage/js/YouTubePopUp.js"></script>
+    <script src="HomePage/js/select2.js"></script>
+    <script src="HomePage/js/datepicker.js"></script>
+    <script src="HomePage/js/smooth-scroll.min.js"></script>
+    <script src="HomePage/js/custom.js"></script>
 </body>
 
 <!-- Mirrored from duruthemes.com/demo/html/cappa/demo6-light/room-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 18 Sep 2025 01:56:18 GMT -->

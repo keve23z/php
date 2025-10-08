@@ -3,33 +3,43 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
+// controllers in Main namespace
+use App\Http\Controllers\Main\PhongController;
+use App\Http\Controllers\Main\TienNghiController;
+use App\Http\Controllers\Main\LoaiPhongController;
 
-/**
- * Helper to call API:
- * - If $endpoint is an absolute URL (http/https) -> use Http client.
- * - If $endpoint is a path starting with "/api/" or relative -> use internal dispatch (app()->handle)
- *   to avoid network deadlock when web and API are the same Laravel app.
- */
-$callApi = function(string $endpoint, int $timeout = 5) {
+$apiBaseEnv = trim(env('API_URL', ''), "/"); // set API_URL in .env if remote, e.g. http://127.0.0.1:8001
+// final API prefix used by helpers - falls back to local dispatch via /api
+$apiPrefix = $apiBaseEnv ? ($apiBaseEnv . '/api') : '/api';
+
+$callApi = function(string $endpoint, int $timeout = 5) use ($apiPrefix) {
     try {
+        // if caller passed a full URL, use it
         if (preg_match('#^https?://#i', $endpoint)) {
             $resp = Http::timeout($timeout)->get($endpoint);
             return $resp->ok() ? $resp->json() : null;
         }
 
-        // ensure path begins with slash
-        $path = (strpos($endpoint, '/') === 0) ? $endpoint : '/' . $endpoint;
-
-        $subRequest = Request::create($path, 'GET');
-        $subResponse = app()->handle($subRequest);
-
-        $status = $subResponse->getStatusCode();
-        if ($status >= 200 && $status < 300) {
-            $content = $subResponse->getContent();
-            $json = json_decode($content, true);
-            return $json;
+        // normalize endpoint to start with /api/...
+        $normalized = preg_replace('#^/+#', '/', $endpoint);
+        if (strpos($normalized, '/api/') !== 0) {
+            $normalized = '/api' . (strpos($normalized, '/') === 0 ? $normalized : '/' . $normalized);
         }
 
+        // if API prefix is remote, call remote API via HTTP client
+        if (preg_match('#^https?://#', $apiPrefix)) {
+            $url = rtrim($apiPrefix, '/') . $normalized; // $apiPrefix already contains /api when remote
+            $resp = Http::timeout($timeout)->get($url);
+            return $resp->ok() ? $resp->json() : null;
+        }
+
+        // else perform internal dispatch (same Laravel app)
+        $subRequest = Request::create($normalized, 'GET');
+        $subResponse = app()->handle($subRequest);
+        $status = $subResponse->getStatusCode();
+        if ($status >= 200 && $status < 300) {
+            return json_decode($subResponse->getContent(), true);
+        }
         return null;
     } catch (\Throwable $e) {
         logger()->error("callApi error for [$endpoint]: " . $e->getMessage());

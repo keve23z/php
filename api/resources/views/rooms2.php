@@ -10,12 +10,12 @@
     <meta name="description" content="THE CAPPA is a modern, elegant HTML template for luxury hotels, resorts, and vacation rentals. Fully responsive, customizable, and perfect for hospitality websites.">
     <meta name="author" content="THE CAPPA Luxury Hotel Template by DuruThemes">
     <meta name="robots" content="index, follow">
-    <link rel="icon" href="img/favicon.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="HomePage/img/favicon.png" type="image/png" sizes="32x32">
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400&amp;family=Barlow:wght@400&amp;family=Gilda+Display&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/plugins.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="HomePage/css/plugins.css" />
+    <link rel="stylesheet" href="HomePage/css/style.css" />
 </head>
 <body>
     <!-- Preloader -->
@@ -61,7 +61,7 @@
             <div class="row align-items-center">
                 <!-- Logo -->
                 <div class="col-6 col-md-6 cappa-logo-wrap">
-                    <a href="index.html" class="cappa-logo"><img src="img/logo.png" alt=""></a>
+                    <a href="index.html" class="cappa-logo"><img src="HomePage/img/logo.png" alt=""></a>
                 </div>
                 <!-- Menu Burger -->
                 <div class="col-6 col-md-6 text-right cappa-wrap-burger-wrap"> <a href="#" class="cappa-nav-toggle cappa-js-cappa-nav-toggle"><i></i></a> </div>
@@ -69,7 +69,7 @@
         </div>
     </header>
     <!-- Header Banner -->
-    <div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="img/slider/1.jpg">
+    <div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="HomePage/img/slider/1.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 caption mt-90">
@@ -90,16 +90,16 @@
                             <?php
                                 $img = isset($room['UrlAnhPhong']) ? $room['UrlAnhPhong'] : '1.jpg';
                                 // prefer slider images if present, otherwise fall back to rooms
-                                $sliderPath = public_path('img/slider/' . $img);
+                                $sliderPath = public_path('HomePage/img/slider/' . $img);
                                 if (file_exists($sliderPath)) {
-                                    $imgUrl = '/img/slider/' . rawurlencode($img);
+                                    $imgUrl = '/HomePage/img/slider/' . rawurlencode($img);
                                 } else {
-                                    $imgUrl = '/img/rooms/' . rawurlencode($img);
+                                    $imgUrl = '/HomePage/img/rooms/' . rawurlencode($img);
                                 }
 
                                 // <-- add these definitions to avoid "Undefined variable"
                                 $number = $room['SoPhong'] ?? '';
-                                $title  = $room['MoTa'] ?? ($room['TenPhong'] ?? 'Room');
+                                $title  = $room['TenPhong'] ?? ($room['TenPhong'] ?? 'Room');
                             ?>
                             <?php $leftClass = ($idx % 2) ? ' left' : ''; ?>
                             <div class="rooms2 mb-90<?php echo $leftClass; ?> animate-box" data-animate-effect="fadeInUp">
@@ -238,7 +238,7 @@
                 <div class="col-md-8">
                     <div class="owl-carousel owl-theme">
                         <div class="pricing-card">
-                            <img src="img/pricing/1.jpg" alt="">
+                            <img src="HomePage/img/pricing/1.jpg" alt="">
                             <div class="desc">
                                 <div class="name">Room cleaning</div>
                                 <div class="amount">$50<span>/ month</span></div>
@@ -250,7 +250,7 @@
                             </div>
                         </div>
                         <div class="pricing-card">
-                            <img src="img/pricing/2.jpg" alt="">
+                            <img src="HomePage/img/pricing/2.jpg" alt="">
                             <div class="desc">
                                 <div class="name">Drinks included</div>
                                 <div class="amount">$30<span>/ daily</span></div>
@@ -262,7 +262,7 @@
                             </div>
                         </div>
                         <div class="pricing-card">
-                            <img src="img/pricing/3.jpg" alt="">
+                            <img src="HomePage/img/pricing/3.jpg" alt="">
                             <div class="desc">
                                 <div class="name">Room Breakfast</div>
                                 <div class="amount">$30<span>/ daily</span></div>
@@ -274,7 +274,7 @@
                             </div>
                         </div>
                         <div class="pricing-card">
-                            <img src="img/pricing/4.jpg" alt="">
+                            <img src="HomePage/img/pricing/4.jpg" alt="">
                             <div class="desc">
                                 <div class="name">Safe & Secure</div>
                                 <div class="amount">$15<span>/ daily</span></div>
@@ -292,7 +292,7 @@
     </section>
     <!-- Reservation & Booking Form -->
     <section class="testimonials">
-        <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/slider/2.jpg" data-overlay-dark="2">
+        <div class="background bg-img bg-fixed section-padding pb-0" data-background="HomePage/img/slider/2.jpg" data-overlay-dark="2">
             <div class="container">
                 <div class="row">
                     <!-- Reservation -->
@@ -380,19 +380,19 @@
                 <div class="col-md-7">
                 <div class="owl-carousel owl-theme">
                     <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/1.png" alt=""></a>
+                        <a href="#0"><img src="HomePage/img/clients/1.png" alt=""></a>
                     </div>
                     <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/2.png" alt=""></a>
+                        <a href="#0"><img src="HomePage/img/clients/2.png" alt=""></a>
                     </div>
                     <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/3.png" alt=""></a>
+                        <a href="#0"><img src="HomePage/img/clients/3.png" alt=""></a>
                     </div>
                     <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/4.png" alt=""></a>
+                        <a href="#0"><img src="HomePage/img/clients/4.png" alt=""></a>
                     </div>
                     <div class="clients-logo">
-                        <a href="#0"><img src="img/clients/5.png" alt=""></a>
+                        <a href="#0"><img src="HomePage/img/clients/5.png" alt=""></a>
                     </div>
                     <div class="clients-logo">
                         <a href="#0"><img src="img/clients/6.png" alt=""></a>
@@ -466,24 +466,24 @@
             </div>
     </footer>
     <!-- jQuery -->
-    <script src="js/jquery-3.7.1.min.js"></script>
-    <script src="js/jquery-migrate-3.5.0.min.js"></script>
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <script src="js/imagesloaded.pkgd.min.js"></script>
-    <script src="js/jquery.isotope.v3.0.2.js"></script>
-    <script src="js/pace.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scrollIt.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/jquery.magnific-popup.js"></script>
-    <script src="js/YouTubePopUp.js"></script>
-    <script src="js/select2.js"></script>
-    <script src="js/datepicker.js"></script>
-    <script src="js/smooth-scroll.min.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="HomePage/js/jquery-3.7.1.min.js"></script>
+    <script src="HomePage/js/jquery-migrate-3.5.0.min.js"></script>
+    <script src="HomePage/js/modernizr-2.6.2.min.js"></script>
+    <script src="HomePage/js/imagesloaded.pkgd.min.js"></script>
+    <script src="HomePage/js/jquery.isotope.v3.0.2.js"></script>
+    <script src="HomePage/js/pace.js"></script>
+    <script src="HomePage/js/popper.min.js"></script>
+    <script src="HomePage/js/bootstrap.min.js"></script>
+    <script src="HomePage/js/scrollIt.min.js"></script>
+    <script src="HomePage/js/jquery.waypoints.min.js"></script>
+    <script src="HomePage/js/owl.carousel.min.js"></script>
+    <script src="HomePage/js/jquery.stellar.min.js"></script>
+    <script src="HomePage/js/jquery.magnific-popup.js"></script>
+    <script src="HomePage/js/YouTubePopUp.js"></script>
+    <script src="HomePage/js/select2.js"></script>
+    <script src="HomePage/js/datepicker.js"></script>
+    <script src="HomePage/js/smooth-scroll.min.js"></script>
+    <script src="HomePage/js/custom.js"></script>
 </body>
 
 <!-- Mirrored from duruthemes.com/demo/html/cappa/demo6-light/rooms2.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 18 Sep 2025 01:56:17 GMT -->
